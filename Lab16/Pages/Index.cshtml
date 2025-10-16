@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Главная страница";
+}
+
+<div class="container">
+    <h1>Добро пожаловать!</h1>
+    <p>Текущее время: <span id="current-time"></span></p>
+    <button class="button">Нажми меня</button>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/site.css" />
+}

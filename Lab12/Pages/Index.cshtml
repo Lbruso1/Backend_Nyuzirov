@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Главная страница";
+}
+
+<div class="container mt-4">
+    <h2>Список продуктов</h2>
+
+    <!-- Форма добавления продукта -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Добавить новый продукт</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Название</label>
+                    <input type="text" class="form-control" id="Name" name="Name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Price" class="form-label">Цена</label>
+                    <input type="number" step="0.01" class="form-control" id="Price" name="Price" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Description" class="form-label">Описание</label>
+                    <textarea class="form-control" id="Description" name="Description" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Добавить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Таблица продуктов -->
+    <div class="card">
+        <div class="card-header">
+            <h4>Текущие продукты</h4>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>Цена</th>
+                        <th>Описание</th>
+                        <th>Дата создания</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <td>@product.Id</td>
+                            <td>@product.Name</td>
+                            <td>@product.Price.ToString("C")</td>
+                            <td>@product.Description</td>
+                            <td>@product.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

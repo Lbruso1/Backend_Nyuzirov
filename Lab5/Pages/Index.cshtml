@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Главная страница";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Добро пожаловать</h1>
+    <p>Это демонстрация работы статических файлов в ASP.NET Core</p>
+    
+    <div class="image-container">
+        <img src="~/images/test.jpg" alt="Тестовое изображение" class="img-fluid" />
+    </div>
+    
+    <div class="mt-4">
+        <button id="testButton" class="btn btn-primary">Нажми меня</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/scripts/main.js"></script>
+}

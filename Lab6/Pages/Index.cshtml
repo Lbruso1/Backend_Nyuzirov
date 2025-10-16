@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to @Model.AppSettings.ApplicationName</h1>
+    <p>Version: @Model.AppSettings.Version</p>
+    <p class="text-muted">Current Environment: @Model.CurrentEnvironment</p>
+    
+    <div class="mt-4">
+        <h2>Configuration Settings</h2>
+        <div class="card">
+            <div class="card-body">
+                <p><strong>API Endpoint:</strong> @Model.AppSettings.ApiEndpoint</p>
+                <p><strong>Connection Timeout:</strong> @Model.AppSettings.ConnectionTimeout seconds</p>
+                <p><strong>Feature X:</strong> @(Model.AppSettings.EnableFeatureX ? "Enabled" : "Disabled")</p>
+                <p><strong>Debug Mode:</strong> @(Model.AppSettings.DebugMode ? "On" : "Off")</p>
+            </div>
+        </div>
+    </div>
+</div>

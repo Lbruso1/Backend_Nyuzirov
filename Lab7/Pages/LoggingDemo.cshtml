@@ -1,0 +1,64 @@
+@page
+@using Microsoft.Extensions.Logging
+@using Microsoft.AspNetCore.Mvc.RazorPages
+@inject ILogger<LoggingDemoModel> Logger
+@model LoggingDemoModel
+
+<div class="container mt-5">
+    <h1>Logging Demo</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Test Different Log Levels</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <button type="submit" name="logLevel" value="trace" class="btn btn-secondary">Log Trace</button>
+                            <button type="submit" name="logLevel" value="debug" class="btn btn-info">Log Debug</button>
+                            <button type="submit" name="logLevel" value="information" class="btn btn-primary">Log Information</button>
+                            <button type="submit" name="logLevel" value="warning" class="btn btn-warning">Log Warning</button>
+                            <button type="submit" name="logLevel" value="error" class="btn btn-danger">Log Error</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    public class LoggingDemoModel : PageModel
+    {
+        private readonly ILogger<LoggingDemoModel> _logger;
+
+        public LoggingDemoModel(ILogger<LoggingDemoModel> logger)
+        {
+            _logger = logger;
+        }
+
+        public void OnPost(string logLevel)
+        {
+            switch (logLevel?.ToLower())
+            {
+                case "trace":
+                    _logger.LogTrace("This is a TRACE level message");
+                    break;
+                case "debug":
+                    _logger.LogDebug("This is a DEBUG level message");
+                    break;
+                case "information":
+                    _logger.LogInformation("This is an INFORMATION level message");
+                    break;
+                case "warning":
+                    _logger.LogWarning("This is a WARNING level message");
+                    break;
+                case "error":
+                    _logger.LogError("This is an ERROR level message");
+                    break;
+            }
+        }
+    }
+} 

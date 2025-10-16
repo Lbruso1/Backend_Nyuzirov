@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "dttyJAxQgLw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alext\\Desktop\\back\\Lab17\\Lab17.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alext\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.0\\microsoft.extensions.caching.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.0\\microsoft.extensions.caching.memory.9.0.0.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\8.0.2\\microsoft.extensions.caching.stackexchangeredis.8.0.2.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\microsoft.extensions.options\\9.0.0\\microsoft.extensions.options.9.0.0.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\stackexchange.redis\\2.6.122\\stackexchange.redis.2.6.122.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0\\system.diagnostics.diagnosticsource.9.0.0.nupkg.sha512",
+    "C:\\Users\\alext\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "Lab17 зависит от Microsoft.Extensions.Caching.Memory (>= 8.0.2), но версия Microsoft.Extensions.Caching.Memory 8.0.2 не найдена. Использовалась версия Microsoft.Extensions.Caching.Memory 9.0.0.",
+      "projectPath": "C:\\Users\\alext\\Desktop\\back\\Lab17\\Lab17.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\alext\\Desktop\\back\\Lab17\\Lab17.csproj",
+      "libraryId": "Microsoft.Extensions.Caching.Memory",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

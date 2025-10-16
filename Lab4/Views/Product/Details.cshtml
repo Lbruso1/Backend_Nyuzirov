@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1>Product Details</h1>
+
+<p>Showing details for product with ID: @ViewBag.ProductId</p>
+
+<div>
+    <h2>Product Information</h2>
+    <p>This is a sample product page showing how routing parameters work.</p>
+    <p>You can access this page using the URL pattern: /Product/Details/{id}</p>
+</div>
+
+<a asp-controller="Product" asp-action="List" asp-route-category="electronics">Back to Products</a> 

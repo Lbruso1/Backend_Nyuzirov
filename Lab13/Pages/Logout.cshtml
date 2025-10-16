@@ -1,0 +1,10 @@
+@page
+@model LogoutModel
+@functions {
+    public async Task OnGetAsync()
+    {
+        await Model.OnGetAsync();
+    }
+}
+<h2>Выход</h2>
+<p>Вы вышли из системы.</p> 

@@ -1,0 +1,20 @@
+@page
+@model LoginModel
+<h2>Вход</h2>
+<form method="post">
+    <div>
+        <label>Имя пользователя:</label>
+        <input type="text" name="username" />
+    </div>
+    <div>
+        <label>Пароль:</label>
+        <input type="password" name="password" />
+    </div>
+    <div>
+        <button type="submit">Войти</button>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div style="color:red">@Model.ErrorMessage</div>
+    }
+</form> 

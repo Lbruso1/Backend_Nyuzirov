@@ -1,0 +1,129 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Демонстрация состояний";
+}
+
+<div class="container mt-4">
+    <h1>Демонстрация различных способов хранения состояния</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Серверное состояние (Session)</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-page-handler="Session">
+                        <div class="form-group">
+                            <label for="sessionValue">Значение для сессии:</label>
+                            <input type="text" class="form-control" id="sessionValue" name="value" />
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Сохранить в сессию</button>
+                    </form>
+                    @if (!string.IsNullOrEmpty(Model.SessionValue))
+                    {
+                        <div class="mt-3">
+                            <p>Текущее значение в сессии: <strong>@Model.SessionValue</strong></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Cookie</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-page-handler="Cookie">
+                        <div class="form-group">
+                            <label for="cookieValue">Значение для cookie:</label>
+                            <input type="text" class="form-control" id="cookieValue" name="value" />
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Сохранить в cookie</button>
+                    </form>
+                    @if (!string.IsNullOrEmpty(Model.CookieValue))
+                    {
+                        <div class="mt-3">
+                            <p>Текущее значение в cookie: <strong>@Model.CookieValue</strong></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>localStorage</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="localStorageValue">Значение для localStorage:</label>
+                        <input type="text" class="form-control" id="localStorageValue" />
+                    </div>
+                    <button onclick="saveToLocalStorage()" class="btn btn-primary mt-2">Сохранить в localStorage</button>
+                    <div id="localStorageResult" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>sessionStorage</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="sessionStorageValue">Значение для sessionStorage:</label>
+                        <input type="text" class="form-control" id="sessionStorageValue" />
+                    </div>
+                    <button onclick="saveToSessionStorage()" class="btn btn-primary mt-2">Сохранить в sessionStorage</button>
+                    <div id="sessionStorageResult" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function saveToLocalStorage() {
+            const value = document.getElementById('localStorageValue').value;
+            localStorage.setItem('demoValue', value);
+            updateLocalStorageDisplay();
+        }
+
+        function saveToSessionStorage() {
+            const value = document.getElementById('sessionStorageValue').value;
+            sessionStorage.setItem('demoValue', value);
+            updateSessionStorageDisplay();
+        }
+
+        function updateLocalStorageDisplay() {
+            const value = localStorage.getItem('demoValue');
+            const display = document.getElementById('localStorageResult');
+            if (value) {
+                display.innerHTML = `<p>Текущее значение в localStorage: <strong>${value}</strong></p>`;
+            }
+        }
+
+        function updateSessionStorageDisplay() {
+            const value = sessionStorage.getItem('demoValue');
+            const display = document.getElementById('sessionStorageResult');
+            if (value) {
+                display.innerHTML = `<p>Текущее значение в sessionStorage: <strong>${value}</strong></p>`;
+            }
+        }
+
+        // Инициализация отображения при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLocalStorageDisplay();
+            updateSessionStorageDisplay();
+        });
+    </script>
+}

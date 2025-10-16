@@ -1,0 +1,8 @@
+C:\Users\alext\Desktop\back\Lab17\obj\Debug\net7.0\Lab17.csproj.AssemblyReference.cache
+C:\Users\alext\Desktop\back\Lab17\obj\Debug\net7.0\Lab17.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alext\Desktop\back\Lab17\obj\Debug\net7.0\Lab17.AssemblyInfoInputs.cache
+C:\Users\alext\Desktop\back\Lab17\obj\Debug\net7.0\Lab17.AssemblyInfo.cs
+C:\Users\alext\Desktop\back\Lab17\obj\Debug\net7.0\Lab17.csproj.CoreCompileInputs.cache
+C:\Users\alext\Desktop\back\Lab17\obj\Debug\net7.0\Lab17.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alext\Desktop\back\Lab17\obj\Debug\net7.0\Lab17.RazorAssemblyInfo.cache
+C:\Users\alext\Desktop\back\Lab17\obj\Debug\net7.0\Lab17.RazorAssemblyInfo.cs

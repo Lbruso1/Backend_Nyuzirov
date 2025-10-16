@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Демонстрация HTML ответа";
+}
+
+<div class="container mt-4">
+    <h1>Демонстрация различных типов ответов в ASP.NET Core</h1>
+    
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Доступные эндпоинты:</h2>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/ResponseDemo/GetJsonData">Получить JSON данные</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/ResponseDemo/GetTextFile">Скачать текстовый файл</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/ResponseDemo/GetXmlData">Получить XML данные</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/ResponseDemo/GetStatusCode">Получить статус код</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> 

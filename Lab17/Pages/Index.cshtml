@@ -1,0 +1,73 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Демонстрация кеширования";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Демонстрация различных типов кеширования</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>Встроенный кэш памяти</h5>
+                </div>
+                <div class="card-body">
+                    <p>@Model.MemoryCacheResult</p>
+                    <p>Время выполнения: @Model.MemoryCacheTime мс</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>Распределенный кэш</h5>
+                </div>
+                <div class="card-body">
+                    <p>@Model.DistributedCacheResult</p>
+                    <p>Время выполнения: @Model.DistributedCacheTime мс</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>Кэш на диске</h5>
+                </div>
+                <div class="card-body">
+                    <p>@Model.FileCacheResult</p>
+                    <p>Время выполнения: @Model.FileCacheTime мс</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                <button type="submit" class="btn btn-primary">Очистить все кэши</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Инструкция по тестированию</h5>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li>При первом запуске страницы данные будут загружены с задержкой (имитация долгой операции)</li>
+                        <li>При последующих обновлениях страницы данные будут загружаться из кэша (быстро)</li>
+                        <li>Нажмите кнопку "Очистить все кэши" для удаления кэшированных данных</li>
+                        <li>После очистки кэша при следующем запросе данные будут загружены заново</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
